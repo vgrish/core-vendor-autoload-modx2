@@ -1,0 +1,61 @@
+{
+  "name": "vgrish/core-vendor-autoload-modx2",
+  "type": "library",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "MODX",
+    "Revolution",
+    "core-vendor-autoload-modx2"
+  ],
+  "authors": [
+    {
+      "name": "Vgrish",
+      "email": "vgrish@gmail.com"
+    }
+  ],
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Vgrish\\CoreVendorAutoloadMODX2\\": "core/src/"
+    },
+    "classmap": [
+      "core/src/"
+    ]
+  },
+  "bin": [
+    "bin/core-vendor-autoload-modx2"
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-curl": "*",
+    "ext-simplexml": "*",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "symfony/console": "^5.4"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.10",
+    "jetbrains/phpstorm-attributes": "1.1",
+    "friendsofphp/php-cs-fixer": "^3.5",
+    "ergebnis/php-cs-fixer-config": "^6.33.0"
+  },
+  "scripts": {
+    "coding-standards": [
+      "php-cs-fixer fix --diff --show-progress=dots --verbose"
+    ],
+    "auto-scripts": {
+      "dump:autoload": "composer dump-autoload --optimize"
+    },
+    "post-install-cmd": [
+      "@auto-scripts"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  }
+}
