@@ -1,0 +1,1 @@
+# core-vendor-autoload-modx2
