@@ -1,9 +1,9 @@
 {
   "name": "vgrish/core-vendor-autoload-modx2",
   "type": "library",
-  "license": "MIT",
+  "license": "unlicense",
   "version": "1.0.0",
-  "description": "",
+  "description": "Auto-upload `vendor/autoload.php` and `bootsrap.php` a third-party package installed via a composer",
   "keywords": [
     "MODX",
     "Revolution",
