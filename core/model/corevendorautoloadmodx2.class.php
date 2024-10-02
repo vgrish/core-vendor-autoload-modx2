@@ -29,11 +29,18 @@ class CoreVendorAutoloadMODX2
     protected function initNamespaces(): void
     {
         $modx = &self::$modx;
-        $namespaces = $modx->call(modNamespace::class, 'loadCache', [&$modx]);
+        $namespaces = $modx->call(\modNamespace::class, 'loadCache', [&$modx]);
 
         foreach ($namespaces as $namespace) {
             if (\is_readable($namespace['path'] . 'bootstrap.php')) {
-                require $namespace['path'] . 'bootstrap.php';
+                try {
+                    require $namespace['path'] . 'bootstrap.php';
+                } catch (Error $e) {
+                    $modx->log(
+                        \modX::LOG_LEVEL_ERROR,
+                        \sprintf('include file `%s` failed with an error: `%s` line: `%s`', $e->getFile(), $e->getMessage(), $e->getLine()),
+                    );
+                }
             }
         }
     }

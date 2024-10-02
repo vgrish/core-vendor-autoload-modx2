@@ -16,7 +16,7 @@ class App
     public const AUTHOR = 'vgrish';
     public const NAME = 'CoreVendorAutoloadMODX2';
     public const NAMESPACE = 'core-vendor-autoload-modx2';
-    public const VERSION = '1.0.0';
+    public const VERSION = '1.0.1';
     public static \modX $modx;
     protected static $instance;
 

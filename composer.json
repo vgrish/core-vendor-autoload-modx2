@@ -2,7 +2,7 @@
   "name": "vgrish/core-vendor-autoload-modx2",
   "type": "library",
   "license": "unlicense",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auto-upload `vendor/autoload.php` and `bootsrap.php` a third-party package installed via a composer",
   "keywords": [
     "MODX",
