@@ -7,7 +7,7 @@ use Ergebnis\PhpCsFixer\Config;
 $header = <<<EOF
 Copyright (c) 2024 Vgrish <vgrish@gmail.com>
 "vgrish/core-vendor-autoload-modx2" package for CoreVendorAutoloadMODX2
-The version 1.0.0
+The version 1.0.2
 @see https://github.com/vgrish/core-vendor-autoload-modx2
 EOF;
 

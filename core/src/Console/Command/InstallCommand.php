@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * Copyright (c) 2024 Vgrish <vgrish@gmail.com>
  * "vgrish/core-vendor-autoload-modx2" package for CoreVendorAutoloadMODX2
- * The version 1.0.0
+ * The version 1.0.2
  * @see https://github.com/vgrish/core-vendor-autoload-modx2
  */
 
@@ -62,6 +62,24 @@ class InstallCommand extends Command
             );
             $extension->save();
             $output->writeln('<info>Created extension package"' . App::NAME . '"</info>');
+        }
+
+        $key = App::NAMESPACE . '.show_startup_errors';
+
+        if (!$modx->getObject(\modSystemSetting::class, $key)) {
+            $setting = new \modSystemSetting($modx);
+            $setting->fromArray(
+                [
+                    'key' => $key,
+                    'namespace' => App::NAME,
+                    'xtype' => 'combo-boolean',
+                    'value' => false,
+                ],
+                false,
+                true,
+            );
+            $setting->save();
+            $output->writeln('<info>Created system setting "' . $key . '"</info>');
         }
 
         $modx->getCacheManager()->refresh();
